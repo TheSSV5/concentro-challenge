@@ -9,7 +9,7 @@ console.log('Worker source set to:', pdfjsLib.GlobalWorkerOptions.workerSrc);
 
 // Converts a PDF page to an image (canvas).
 const renderPageToCanvas = async (page) => {
-  const viewport = page.getViewport({ scale: 2.0 }); // Increase scale for better OCR accuracy  (how)
+  const viewport = page.getViewport({ scale: 2.0 }); // Increase scale for better OCR accuracy (2.0 is optimal)
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
 
