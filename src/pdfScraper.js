@@ -71,8 +71,8 @@ export const extractNameAndAddress = (text) => {
   const lines = text.split('\n');
 
   // Extract the name (assuming it's on a specific line)
-  const nameLine = lines.find((line) => line.match(/[A-Z]+\s[A-Z]\.\s[A-Z]+/));
-  const nameMatch = nameLine ? nameLine.match(/([A-Z]+\s[A-Z]\.\s[A-Z]+)/) : null;
+  const nameLine = lines.find((line) => line.match(/^([A-Z]{2,}(?:\s+[A-Z]+\.?)*\s+[A-Z]{2,})$/));
+  const nameMatch = nameLine ? nameLine.match(/^([A-Z]{2,}(?:\s+[A-Z]+\.?)*\s+[A-Z]{2,})$/) : null;
 
   // Extract the address (assuming it's on specific lines)
   const addressLine1 = lines.find((line) => line.match(/\d+\s[A-Z]+\s[A-Z]+/));
